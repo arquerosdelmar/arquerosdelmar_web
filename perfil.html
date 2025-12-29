@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil miembro - Arqueros del Mar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="descarga.png" alt="Arqueros del Mar" />
+        <div>
+          <h1>Arqueros del Mar</h1>
+          <div class="pill">Club deportivo - Tiro con arco</div>
+        </div>
+      </div>
+      <div class="tab-bar">
+        <a class="tab" data-nav="index" href="index.html">Inicio</a>
+        <button class="tab" data-target="auth" type="button">Login / Registro</button>
+        <a class="tab" data-nav="matricula" href="matricula.html">Matricula</a>
+        <a class="tab active" data-nav="perfil" href="perfil.html">Perfil miembro</a>
+        <a class="tab" data-nav="admin" href="admin.html">Panel Admin</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <div class="badge">Miembros del club</div>
+          <h2>Tu progreso</h2>
+          <p class="subtitle">
+            Consulta tus datos de equipo, puntajes y medallas. Para actualizar, guarda una nueva matricula con tu info.
+          </p>
+          <div class="actions">
+            <a class="btn" href="matricula.html">Actualizar datos</a>
+            <button class="btn secondary" data-target="auth" type="button">Login / Registro</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Resumen</h2>
+          <p class="subtitle">Ultimos datos guardados.</p>
+          <div id="perfil-content"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Arqueros del Mar - 2024 - Precision en cada flecha
+    </footer>
+
+    <div class="modal-backdrop hidden" id="auth-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <div class="tab-bar">
+              <div class="tab active" data-auth-tab="login">Login</div>
+              <div class="tab" data-auth-tab="registro">Registro</div>
+            </div>
+          </div>
+          <button class="close-btn" id="close-modal">Cerrar</button>
+        </div>
+        <div class="modal-body">
+          <div data-auth-view="login">
+            <p class="subtitle" style="margin-top:0;">Accede con tu correo y telefono.</p>
+            <form id="login-form">
+              <div>
+                <label for="login-email">Correo</label>
+                <input id="login-email" type="email" placeholder="tu@email.com" required />
+              </div>
+              <div>
+                <label for="login-phone">Telefono</label>
+                <input id="login-phone" type="tel" placeholder="+52 ..." required />
+              </div>
+              <button type="submit">Entrar</button>
+            </form>
+          </div>
+          <div data-auth-view="registro" class="hidden">
+            <p class="subtitle" style="margin-top:0;">Crea tu cuenta con datos basicos.</p>
+            <form id="register-form">
+              <div>
+                <label for="reg-name">Nombre completo</label>
+                <input id="reg-name" type="text" placeholder="Nombre y apellidos" required />
+              </div>
+              <div>
+                <label for="reg-email">Correo</label>
+                <input id="reg-email" type="email" placeholder="tu@email.com" required />
+              </div>
+              <div>
+                <label for="reg-phone">Telefono</label>
+                <input id="reg-phone" type="tel" placeholder="+52 ..." required />
+              </div>
+              <div>
+                <label for="reg-birth">Fecha de nacimiento</label>
+                <input id="reg-birth" type="date" required />
+              </div>
+              <button type="submit">Crear cuenta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

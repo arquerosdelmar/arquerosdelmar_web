@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Admin - Arqueros del Mar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="descarga.png" alt="Arqueros del Mar" />
+        <div>
+          <h1>Arqueros del Mar</h1>
+          <div class="pill">Club deportivo - Tiro con arco</div>
+        </div>
+      </div>
+      <div class="tab-bar">
+        <a class="tab" data-nav="index" href="index.html">Inicio</a>
+        <button class="tab" data-target="auth" type="button">Login / Registro</button>
+        <a class="tab" data-nav="matricula" href="matricula.html">Matricula</a>
+        <a class="tab" data-nav="perfil" href="perfil.html">Perfil miembro</a>
+        <a class="tab active" data-nav="admin" href="admin.html">Panel Admin</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="grid two-col" style="align-items: center;">
+          <div>
+            <h2>Panel de administracion</h2>
+            <p class="subtitle">
+              Revisa usuarios, matriculas y estados de comprobantes. Este panel usa datos simulados o los que captures localmente.
+            </p>
+          </div>
+          <div class="chips">
+            <div class="chip">Usuarios: local</div>
+            <div class="chip">Pendientes: 1</div>
+            <div class="chip">Validados: 1</div>
+            <div class="chip">Rechazados: 1</div>
+          </div>
+        </div>
+
+        <div style="overflow-x: auto; margin-top: 16px;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Sede</th>
+                <th>Frecuencia</th>
+                <th>Tipo</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="admin-table-body"></tbody>
+          </table>
+        </div>
+
+        <div style="overflow-x: auto; margin-top: 20px;">
+          <h3>Miembros (equipo y progreso)</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Equipo</th>
+                <th>Puntaje</th>
+                <th>Medallas</th>
+                <th>Notas</th>
+              </tr>
+            </thead>
+            <tbody id="member-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Arqueros del Mar - 2024 - Precision en cada flecha
+    </footer>
+
+    <div class="modal-backdrop hidden" id="auth-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <div class="tab-bar">
+              <div class="tab active" data-auth-tab="login">Login</div>
+              <div class="tab" data-auth-tab="registro">Registro</div>
+            </div>
+          </div>
+          <button class="close-btn" id="close-modal">Cerrar</button>
+        </div>
+        <div class="modal-body">
+          <div data-auth-view="login">
+            <p class="subtitle" style="margin-top:0;">Accede con tu correo y telefono.</p>
+            <form id="login-form">
+              <div>
+                <label for="login-email">Correo</label>
+                <input id="login-email" type="email" placeholder="tu@email.com" required />
+              </div>
+              <div>
+                <label for="login-phone">Telefono</label>
+                <input id="login-phone" type="tel" placeholder="+52 ..." required />
+              </div>
+              <button type="submit">Entrar</button>
+            </form>
+          </div>
+          <div data-auth-view="registro" class="hidden">
+            <p class="subtitle" style="margin-top:0;">Crea tu cuenta con datos basicos.</p>
+            <form id="register-form">
+              <div>
+                <label for="reg-name">Nombre completo</label>
+                <input id="reg-name" type="text" placeholder="Nombre y apellidos" required />
+              </div>
+              <div>
+                <label for="reg-email">Correo</label>
+                <input id="reg-email" type="email" placeholder="tu@email.com" required />
+              </div>
+              <div>
+                <label for="reg-phone">Telefono</label>
+                <input id="reg-phone" type="tel" placeholder="+52 ..." required />
+              </div>
+              <div>
+                <label for="reg-birth">Fecha de nacimiento</label>
+                <input id="reg-birth" type="date" required />
+              </div>
+              <button type="submit">Crear cuenta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

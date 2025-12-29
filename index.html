@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arqueros del Mar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="descarga.png" alt="Arqueros del Mar" />
+        <div>
+          <h1>Arqueros del Mar</h1>
+          <div class="pill">Club deportivo - Tiro con arco</div>
+        </div>
+      </div>
+      <div class="tab-bar">
+        <a class="tab active" data-nav="index" href="index.html">Inicio</a>
+        <button class="tab" data-target="auth" type="button">Login / Registro</button>
+        <a class="tab" data-nav="matricula" href="matricula.html">Matricula</a>
+        <a class="tab" data-nav="perfil" href="perfil.html">Perfil miembro</a>
+        <a class="tab" data-nav="admin" href="admin.html">Panel Admin</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <div class="badge">Negro y rojo - Enfoque y precision</div>
+          <h2>Club Arqueros del Mar</h2>
+          <p class="subtitle">
+            Entrenamientos guiados, comunidad enfocada y gestion simple de tus matriculas. Crea tu cuenta, sube tus
+            comprobantes y sigue tu progreso.
+          </p>
+          <div class="actions">
+            <button data-target="auth" class="btn" type="button">Empezar ahora</button>
+            <a class="btn secondary" href="#info">Ver mas</a>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Proximas sesiones</h2>
+          <p class="subtitle">Horarios disponibles en sedes</p>
+          <div class="chips">
+            <div class="chip">CDMX Norte - Mar/Jue 19:00</div>
+            <div class="chip">Guadalajara - Lun/Mie 18:00</div>
+            <div class="chip">Monterrey - Sab 10:00</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="info" class="card" style="margin-top: 20px;">
+        <h2>Sobre el club</h2>
+        <p class="subtitle">
+          Entrena con instructores certificados y una comunidad enfocada en la precision. Sesiones para principiantes y
+          avanzados, con seguimiento de progreso y actividades especiales.
+        </p>
+        <div class="chips">
+          <div class="chip">Equipamiento disponible</div>
+          <div class="chip">Eventos mensuales</div>
+          <div class="chip">Clases personalizadas</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Arqueros del Mar - 2024 - Precision en cada flecha
+    </footer>
+
+    <div class="modal-backdrop hidden" id="auth-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <div class="tab-bar">
+              <div class="tab active" data-auth-tab="login">Login</div>
+              <div class="tab" data-auth-tab="registro">Registro</div>
+            </div>
+          </div>
+          <button class="close-btn" id="close-modal">Cerrar</button>
+        </div>
+        <div class="modal-body">
+          <div data-auth-view="login">
+            <p class="subtitle" style="margin-top:0;">Accede con tu correo y telefono.</p>
+            <form id="login-form">
+              <div>
+                <label for="login-email">Correo</label>
+                <input id="login-email" type="email" placeholder="tu@email.com" required />
+              </div>
+              <div>
+                <label for="login-phone">Telefono</label>
+                <input id="login-phone" type="tel" placeholder="+52 ..." required />
+              </div>
+              <button type="submit">Entrar</button>
+            </form>
+          </div>
+          <div data-auth-view="registro" class="hidden">
+            <p class="subtitle" style="margin-top:0;">Crea tu cuenta con datos basicos.</p>
+            <form id="register-form">
+              <div>
+                <label for="reg-name">Nombre completo</label>
+                <input id="reg-name" type="text" placeholder="Nombre y apellidos" required />
+              </div>
+              <div>
+                <label for="reg-email">Correo</label>
+                <input id="reg-email" type="email" placeholder="tu@email.com" required />
+              </div>
+              <div>
+                <label for="reg-phone">Telefono</label>
+                <input id="reg-phone" type="tel" placeholder="+52 ..." required />
+              </div>
+              <div>
+                <label for="reg-birth">Fecha de nacimiento</label>
+                <input id="reg-birth" type="date" required />
+              </div>
+              <button type="submit">Crear cuenta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

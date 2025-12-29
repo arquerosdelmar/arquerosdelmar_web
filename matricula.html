@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matricula - Arqueros del Mar</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="descarga.png" alt="Arqueros del Mar" />
+        <div>
+          <h1>Arqueros del Mar</h1>
+          <div class="pill">Club deportivo - Tiro con arco</div>
+        </div>
+      </div>
+      <div class="tab-bar">
+        <a class="tab" data-nav="index" href="index.html">Inicio</a>
+        <button class="tab" data-target="auth" type="button">Login / Registro</button>
+        <a class="tab active" data-nav="matricula" href="matricula.html">Matricula</a>
+        <a class="tab" data-nav="perfil" href="perfil.html">Perfil miembro</a>
+        <a class="tab" data-nav="admin" href="admin.html">Panel Admin</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="grid two-col">
+        <div class="card">
+          <h2>Registrar matricula</h2>
+          <p class="subtitle">Elige tipo de alumno, sede y frecuencia. Los miembros pueden agregar su equipo y puntajes.</p>
+          <form id="matricula-form">
+            <div>
+              <label for="mat-tipo">Tipo de alumno</label>
+              <select id="mat-tipo" required>
+                <option value="">Selecciona tipo</option>
+                <option value="miembro">Miembro del club</option>
+                <option value="taller">Solo taller</option>
+              </select>
+            </div>
+            <div>
+              <label for="mat-sede">Sede</label>
+              <select id="mat-sede" required>
+                <option value="">Selecciona una sede</option>
+                <option>CDMX Norte</option>
+                <option>Guadalajara</option>
+                <option>Monterrey</option>
+                <option>En playa (itinerante)</option>
+              </select>
+            </div>
+            <div>
+              <label for="mat-frecuencia">Frecuencia</label>
+              <select id="mat-frecuencia" required>
+                <option value="">Selecciona frecuencia</option>
+                <option>1 vez/semana</option>
+                <option>2 veces/semana</option>
+                <option>3 veces/semana</option>
+                <option>Libre</option>
+              </select>
+            </div>
+            <div>
+              <label for="mat-custom">Frecuencia personalizada</label>
+              <input id="mat-custom" type="text" placeholder="Ej. Lunes, Miercoles y Viernes 7pm" />
+            </div>
+            <div id="member-extra" class="hidden">
+              <div>
+                <label for="mat-equipo">Equipo y arco</label>
+                <input id="mat-equipo" type="text" placeholder="Ej. Recurvo 32#, mango Hoyt" />
+              </div>
+              <div>
+                <label for="mat-flechas">Flechas</label>
+                <input id="mat-flechas" type="text" placeholder="Ej. Easton A/C/E 500" />
+              </div>
+              <div class="grid two-col">
+                <div>
+                  <label for="mat-puntaje">Mejor puntaje (720/indoor)</label>
+                  <input id="mat-puntaje" type="text" placeholder="Ej. 620/720" />
+                </div>
+                <div>
+                  <label for="mat-medallas">Medallas/logros</label>
+                  <input id="mat-medallas" type="text" placeholder="Ej. Plata regional 2024" />
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="mat-notas">Notas adicionales</label>
+              <textarea id="mat-notas" rows="3" placeholder="Lesiones, objetivos, disponibilidad..."></textarea>
+            </div>
+            <button type="submit">Guardar matricula</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Estado de comprobantes</h2>
+          <p class="subtitle">Sube tu comprobante y un admin lo valida.</p>
+          <div class="chips">
+            <div class="chip">Ultimo comprobante: Pendiente</div>
+            <div class="chip">Administrador asignado: Sofia</div>
+            <div class="chip">Siguiente pago: 15/08</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Arqueros del Mar - 2024 - Precision en cada flecha
+    </footer>
+
+    <div class="modal-backdrop hidden" id="auth-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <div class="tab-bar">
+              <div class="tab active" data-auth-tab="login">Login</div>
+              <div class="tab" data-auth-tab="registro">Registro</div>
+            </div>
+          </div>
+          <button class="close-btn" id="close-modal">Cerrar</button>
+        </div>
+        <div class="modal-body">
+          <div data-auth-view="login">
+            <p class="subtitle" style="margin-top:0;">Accede con tu correo y telefono.</p>
+            <form id="login-form">
+              <div>
+                <label for="login-email">Correo</label>
+                <input id="login-email" type="email" placeholder="tu@email.com" required />
+              </div>
+              <div>
+                <label for="login-phone">Telefono</label>
+                <input id="login-phone" type="tel" placeholder="+52 ..." required />
+              </div>
+              <button type="submit">Entrar</button>
+            </form>
+          </div>
+          <div data-auth-view="registro" class="hidden">
+            <p class="subtitle" style="margin-top:0;">Crea tu cuenta con datos basicos.</p>
+            <form id="register-form">
+              <div>
+                <label for="reg-name">Nombre completo</label>
+                <input id="reg-name" type="text" placeholder="Nombre y apellidos" required />
+              </div>
+              <div>
+                <label for="reg-email">Correo</label>
+                <input id="reg-email" type="email" placeholder="tu@email.com" required />
+              </div>
+              <div>
+                <label for="reg-phone">Telefono</label>
+                <input id="reg-phone" type="tel" placeholder="+52 ..." required />
+              </div>
+              <div>
+                <label for="reg-birth">Fecha de nacimiento</label>
+                <input id="reg-birth" type="date" required />
+              </div>
+              <button type="submit">Crear cuenta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
