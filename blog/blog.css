@@ -102,8 +102,7 @@ body {
 /* ─── ARTICLE HERO ────────────────────────────────────────────────────────── */
 .article-hero {
   background: var(--black-900);
-  padding: 4rem 2rem 3.5rem;
-  text-align: center;
+  padding: 3rem 2rem 2.75rem;
 }
 
 .article-hero-inner {
@@ -142,12 +141,16 @@ body {
   color: rgba(255,255,255,0.45);
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .article-meta span { display: flex; align-items: center; gap: 0.35rem; }
+.article-meta span + span::before {
+  content: '·';
+  margin-right: 0.35rem;
+  opacity: 0.4;
+}
 
 /* ─── ARTICLE BODY ────────────────────────────────────────────────────────── */
 .article-body {
