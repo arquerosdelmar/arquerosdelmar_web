@@ -435,6 +435,31 @@
       font-size: clamp(4.219rem, 5.906vw, 5.906rem);
       line-height: 1;
       color: var(--crimson-light);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .slot-digit {
+      display: inline-block;
+      overflow: hidden;
+      height: 1em;
+      position: relative;
+    }
+
+    .slot-digit-inner {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slot-digit-inner span {
+      display: block;
+      height: 1em;
+      line-height: 1;
+    }
+
+    .slot-suffix {
+      display: inline-block;
+      line-height: 1;
     }
 
     .stat-item .stat-label {
@@ -685,6 +710,7 @@
     .facility-content { display: flex; flex-direction: column; gap: 0.35rem; }
     .facility-note { font-size: 0.78rem; color: var(--text-muted); font-style: italic; }
     .facility-note--mobile { display: none; }
+    .facility-district { display: block; font-size: 0.82rem; color: var(--text-muted); margin-top: 0.2rem; }
 
     .facility-name {
       font-family: 'Outfit', sans-serif;
@@ -1534,11 +1560,11 @@
           </p>
           <div class="stats-row stats-row--inline">
             <div class="stat-item">
-              <div class="stat-num">80+</div>
+              <div class="stat-num" aria-label="80+"><span class="slot-digit" data-final="8">8</span><span class="slot-digit" data-final="0">0</span><span class="slot-suffix">+</span></div>
               <div class="stat-label">Miembros Activos</div>
             </div>
             <div class="stat-item">
-              <div class="stat-num">30+</div>
+              <div class="stat-num" aria-label="30+"><span class="slot-digit" data-final="3">3</span><span class="slot-digit" data-final="0">0</span><span class="slot-suffix">+</span></div>
               <div class="stat-label">Años de Actividad</div>
             </div>
           </div>
@@ -1549,11 +1575,11 @@
       <!-- col 2: stats (desktop only) -->
       <div class="stats-row">
         <div class="stat-item">
-          <div class="stat-num">80+</div>
+          <div class="stat-num" aria-label="80+"><span class="slot-digit" data-final="8">8</span><span class="slot-digit" data-final="0">0</span><span class="slot-suffix">+</span></div>
           <div class="stat-label">Miembros Activos</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">30+</div>
+          <div class="stat-num" aria-label="30+"><span class="slot-digit" data-final="3">3</span><span class="slot-digit" data-final="0">0</span><span class="slot-suffix">+</span></div>
           <div class="stat-label">Años de Actividad</div>
         </div>
       </div>
@@ -1590,7 +1616,7 @@
           <div class="service-card-body">
             <h3>Arco Recurvo</h3>
             <p>La modalidad olímpica por excelencia. Entrenamos técnica, postura, fuerza y consistencia bajo estándares World Archery para todos los niveles.</p>
-            <a href="#" class="btn btn--primary">Ver Más <svg width="1em" height="1em" aria-hidden="true"><use href="#icon-arrow-rt"/></svg></a>
+            <a href="#" class="btn btn--primary" style="display:none">Ver Más <svg width="1em" height="1em" aria-hidden="true"><use href="#icon-arrow-rt"/></svg></a>
           </div>
         </div>
 
@@ -1600,7 +1626,7 @@
           <div class="service-card-body">
             <h3>Arco Compuesto</h3>
             <p>La precisión llevada al límite. Desarrollamos técnica, control y consistencia, y te enseñamos a configurar y optimizar correctamente los ajustes de tu arco compuesto siguiendo estándares internacionales.</p>
-            <a href="#" class="btn btn--primary">Ver Más <svg width="1em" height="1em" aria-hidden="true"><use href="#icon-arrow-rt"/></svg></a>
+            <a href="#" class="btn btn--primary" style="display:none">Ver Más <svg width="1em" height="1em" aria-hidden="true"><use href="#icon-arrow-rt"/></svg></a>
           </div>
         </div>
 
@@ -1610,7 +1636,7 @@
           <div class="service-card-body">
             <h3>Arco Raso</h3>
             <p>Tiro puro sin miras ni accesorios. Una disciplina que desarrolla instinto, concentración y conexión total con el arco.</p>
-            <a href="#" class="btn btn--primary">Ver Más <svg width="1em" height="1em" aria-hidden="true"><use href="#icon-arrow-rt"/></svg></a>
+            <a href="#" class="btn btn--primary" style="display:none">Ver Más <svg width="1em" height="1em" aria-hidden="true"><use href="#icon-arrow-rt"/></svg></a>
           </div>
         </div>
       </div>
@@ -1630,6 +1656,7 @@
           <span class="facility-num">(01)</span>
           <div class="facility-content">
             <strong class="facility-name">Complejo Deportivo Túpac Amaru</strong>
+            <span class="facility-district">Pueblo Libre, Lima</span>
           </div>
           <div class="facility-thumb">
             <iframe title="Mapa - Complejo Deportivo Túpac Amaru" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.5646668221743!2d-77.07289949999999!3d-12.0734454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c911779ff30d%3A0x90e8a6645dc14af1!2sTupac%20Amaru%20Sports%20Complex!5e0!3m2!1sen!2spe!4v1789510042000!5m2!1sen!2spe" style="border:0;width:400px;height:150px;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -1639,6 +1666,7 @@
           <span class="facility-num">(02)</span>
           <div class="facility-content">
             <strong class="facility-name">IESTP María Rosario Araoz Pinto</strong>
+            <span class="facility-district">San Miguel, Lima</span>
           </div>
           <div class="facility-thumb">
             <iframe title="Mapa - Instituto Superior Tecnológico María Rosario Araoz Pinto" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1347.1358233014043!2d-77.10357917277956!3d-12.071748637586461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cbdf569acb5d%3A0x99ad08bac394f1cd!2sInstituto%20Superior%20Tecnol%C3%B3gico%20P%C3%BAblico%20Maria%20Rosario%20Araoz%20Pinto!5e0!3m2!1sen!2spe!4v1789510688194!5m2!1sen!2spe" style="border:0;width:400px;height:150px;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -1648,6 +1676,7 @@
           <span class="facility-num">(03)</span>
           <div class="facility-content">
             <strong class="facility-name">Complejo Panamericano Costa Verde*</strong>
+            <span class="facility-district">San Miguel, Lima</span>
             <span class="facility-note facility-note--desktop">* Solo para distancias largas World Archery (50 y 70 m)</span>
           </div>
           <div class="facility-thumb">
@@ -1790,23 +1819,13 @@
           <h3>Enlaces</h3>
           <ul>
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">Instalaciones</a></li>
-            <li><a href="#">Membresía</a></li>
+            <li><a href="#">Encuéntranos</a></li>
+            <li><a href="#">Planes</a></li>
             <li><a href="#">Testimonios</a></li>
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h3>Servicios</h3>
-          <ul>
-            <li><a href="#">Entrenamiento Iniciación</a></li>
-            <li><a href="#">Técnica Avanzada</a></li>
-            <li><a href="#">Preparación Competitiva</a></li>
-            <li><a href="#">Torneos</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
+<div class="footer-col">
           <h3>Contacto</h3>
           <address>
             +51 941 157 308<br>
@@ -1999,6 +2018,70 @@
       scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
     }, { passive: true });
     scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+
+  <script>
+    (function () {
+      function buildSlot(el) {
+        const inner = document.createElement('div');
+        inner.className = 'slot-digit-inner';
+        for (let i = 0; i <= 9; i++) {
+          const s = document.createElement('span');
+          s.textContent = i;
+          inner.appendChild(s);
+        }
+        el.innerHTML = '';
+        el.appendChild(inner);
+        inner.style.transition = 'none';
+        inner.style.transform = 'translateY(0)';
+      }
+
+      function animateSlot(el, delay) {
+        const inner = el.querySelector('.slot-digit-inner');
+        if (!inner) return;
+        const final = parseInt(el.dataset.final, 10);
+        inner.style.transition = 'none';
+        inner.style.transform = 'translateY(0)';
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          setTimeout(() => {
+            inner.style.transition = 'transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)';
+            inner.style.transform = `translateY(-${final}em)`;
+          }, delay);
+        }));
+      }
+
+      const digits = document.querySelectorAll('.slot-digit');
+      digits.forEach(buildSlot);
+
+      function runAnimation() {
+        document.querySelectorAll('.stat-num').forEach(statNum => {
+          statNum.querySelectorAll('.slot-digit').forEach((el, i) => {
+            animateSlot(el, i * 150);
+          });
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          runAnimation();
+          observer.disconnect();
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.stat-num').forEach(el => observer.observe(el));
+
+      // fallback: if already in viewport on load, animate after short delay
+      setTimeout(() => {
+        document.querySelectorAll('.stat-num').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            runAnimation();
+            observer.disconnect();
+          }
+        });
+      }, 300);
+    })();
   </script>
 </body>
 </html>
