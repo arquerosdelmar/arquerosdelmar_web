@@ -155,7 +155,28 @@
       max-width: 780px;
     }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .hero h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(4rem, 9vw, 9rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-h1-display {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 800;
       font-size: clamp(4rem, 9vw, 9rem);
@@ -1372,6 +1393,11 @@
         margin-bottom: 0.75rem;
       }
 
+      .hero-h1-display {
+        font-size: clamp(3rem, 13vw, 5rem);
+        margin-bottom: 0.75rem;
+      }
+
       .hero-sub {
         margin-bottom: 1.5rem;
       }
@@ -1507,7 +1533,7 @@
         <li><a href="#about">Nosotros</a></li>
         <li><a href="#services">Modalidades</a></li>
         <li><a href="#facilities">Encuéntranos</a></li>
-        <li><a href="#membership">Planes</a></li>
+        <li><a href="#membership">Clases</a></li>
         <li><a href="#testimonials">Testimonios</a></li>
       </ul>
 
@@ -1536,7 +1562,8 @@
     </div>
 
     <div class="hero-content">
-      <h1>Entrena<br>con los Mejores</h1>
+      <h1 class="visually-hidden">Arqueros del Mar | Club de Tiro con Arco en Lima</h1>
+      <p class="hero-h1-display" aria-hidden="true">Entrena<br>con los Mejores</p>
       <p class="hero-sub hero-sub--desktop">
         Ya sea que busques competir o simplemente disfrutar del arco, aquí encontrarás entrenamientos de clase internacional, instructores certificados y una comunidad que te recibirá desde el primer día.
       </p>
@@ -1556,7 +1583,7 @@
       <!-- col 1: title + body + cta -->
       <div class="about-left">
         <div class="about-text">
-          <h2>Un Hogar para<br>Cada Arquero</h2>
+          <h2>Desde el Principio,<br>Aquí Estamos</h2>
         </div>
         <div class="about-bottom-left">
           <p class="about-body">
@@ -1824,7 +1851,7 @@
           <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Encuéntranos</a></li>
-            <li><a href="#">Planes</a></li>
+            <li><a href="#">Clases</a></li>
             <li><a href="#">Testimonios</a></li>
           </ul>
         </div>
