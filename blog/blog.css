@@ -201,12 +201,12 @@ body {
 
 .article-body li { margin-bottom: 0.4rem; }
 
-.article-body a {
+.article-body a:not([class]) {
   color: var(--crimson);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.article-body a:hover { color: var(--crimson-light); }
+.article-body a:not([class]):hover { color: var(--crimson-light); }
 
 .article-body hr {
   border: none;
@@ -274,6 +274,39 @@ body {
   white-space: nowrap;
 }
 
+/* ─── BUTTONS (mirror index.html system) ─────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.1s;
+}
+.btn:active { transform: scale(0.98); }
+
+.btn--primary {
+  background: var(--crimson);
+  color: #fff !important;
+  border-color: var(--crimson);
+}
+.btn--primary:hover { background: var(--crimson-light); border-color: var(--crimson-light); }
+
+.btn--ghost {
+  background: transparent;
+  border-color: rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.85) !important;
+}
+.btn--ghost:hover { border-color: rgba(255,255,255,0.6); color: #fff !important; }
+
 /* ─── IN-ARTICLE CTA ──────────────────────────────────────────────────────── */
 .article-cta {
   background: var(--black-900);
@@ -301,41 +334,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
-.btn-cta-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Source Sans 3', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 0.9rem 2rem;
-  background: var(--crimson);
-  color: #fff;
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  transition: background 0.2s, transform 0.1s;
-}
-.btn-cta-primary:hover { background: var(--crimson-light); }
-.btn-cta-primary:active { transform: scale(0.98); }
-
-.btn-cta-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: 'Source Sans 3', sans-serif;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 0.9rem 2rem;
-  background: transparent;
-  color: rgba(255,255,255,0.8);
-  border: 1.5px solid rgba(255,255,255,0.25);
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  margin-left: 0.75rem;
-  transition: border-color 0.2s, color 0.2s;
-}
-.btn-cta-ghost:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
 
 /* ─── FAQ ─────────────────────────────────────────────────────────────────── */
 .faq { margin: 2.5rem 0; }
