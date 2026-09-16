@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arquerosdelmar.com.pe/sitemap.xml
