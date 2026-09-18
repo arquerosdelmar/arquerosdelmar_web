@@ -1077,9 +1077,17 @@
       overflow: hidden;
       background: var(--warm-gray);
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--crimson);
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      user-select: none;
     }
-
-    .author-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
     .author-name {
       font-family: 'Source Sans 3', sans-serif;
@@ -2007,9 +2015,7 @@
             </div>
             <div class="quote-author">
               <div class="author-info">
-                <div class="author-avatar">
-                  <img id="quoteAvatar" src="" alt="">
-                </div>
+                <div class="author-avatar" id="quoteAvatar" aria-hidden="true"></div>
                 <div>
                   <div class="author-name" id="quoteName"></div>
                   <div class="author-role" id="quoteRole"></div>
@@ -2139,35 +2145,30 @@
         text: "Excelente club, tiene entrenadores calificados, priorizan la salud física y mental de sus deportistas, tienen un programa completo de fortalecimiento y entrenamiento basados en el avance de cada arquero y lo mejor es que al iniciar el club te brinda todos los implementos para que puedas aprender.",
         name: "Melissa Pamela Peralta Zanabria",
         role: "Google",
-        avatar: "https://picsum.photos/seed/melissa-peralta/100/100",
         image: "images/review-luz.webp"
       },
       {
         text: "Lo mejor! Excelente profesores en el poco tiempo que estuve. Gran equipo de arquería y te ayudan en todo lo que necesitas.",
         name: "Eros Campos",
         role: "Google",
-        avatar: "https://picsum.photos/seed/eros-campos/100/100",
         image: null
       },
       {
         text: "Excelente campo para practicar este hermoso deporte, buenísimos entrenadores! Lo recomiendo.",
         name: "Nathalie Alva",
         role: "Google",
-        avatar: "https://picsum.photos/seed/nathalie-alva/100/100",
         image: null
       },
       {
         text: "Excelente lugar al aire libre para practicar el deporte, buen ambiente, buenos profesores y compañeros.",
         name: "Luz Espinoza de Sanchez V.",
         role: "Google",
-        avatar: "https://picsum.photos/seed/luz-espinoza/100/100",
         image: "images/review-melissa.webp"
       },
       {
         text: "Una experiencia única! Super personalizada para probar un deporte nuevo, buen ambiente y personas divertidas.",
         name: "Alexandra Nicolas",
         role: "Google",
-        avatar: "https://picsum.photos/seed/alexandra-nicolas/100/100",
         image: null
       }
     ];
@@ -2185,12 +2186,11 @@
 
     function render(idx) {
       const r = reviews[idx];
-      textEl.textContent   = r.text;
-      nameEl.textContent   = r.name;
-      roleEl.textContent   = r.role;
-      avatarEl.src         = r.avatar || '';
-      avatarEl.style.display = r.avatar ? '' : 'none';
-      avatarEl.alt         = r.name;
+      textEl.textContent = r.text;
+      nameEl.textContent = r.name;
+      roleEl.textContent = r.role;
+      const initials = r.name.split(' ').slice(0, 2).map(w => w[0]).join('');
+      avatarEl.textContent = initials;
       if (r.image) {
         imgEl.src = r.image;
         imgEl.alt = r.name;
