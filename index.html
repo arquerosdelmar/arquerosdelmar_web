@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/png" href="images/favicon-opt.png">
   <title>Arqueros del Mar — Club de Tiro con Arco en Lima</title>
   <meta name="description" content="Club de tiro con arco en Lima con más de 30 años de experiencia. Instructores certificados World Archery. Clases desde S/ 20. Sedes en Pueblo Libre y San Miguel.">
   <link rel="canonical" href="https://arquerosdelmar.com.pe/">
@@ -1243,8 +1243,13 @@
     .footer-bottom-bg-img {
       position: absolute;
       inset: 0;
-      background: url('images/footer-bg.jpg') center/cover no-repeat;
+      background: url('images/footer-bg-opt.jpg') center/cover no-repeat;
       filter: grayscale(50%);
+    }
+    @supports (background-image: url('data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA')) {
+      .footer-bottom-bg-img {
+        background-image: url('images/footer-bg.webp');
+      }
     }
 
     .footer-bottom {
@@ -1679,7 +1684,10 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">
         <div class="nav-logo-mark">
-          <img src="images/logo.png" alt="Arqueros del Mar">
+          <picture>
+            <source srcset="images/logo.webp" type="image/webp">
+            <img src="images/logo.png" alt="Arqueros del Mar" width="500" height="500" loading="lazy" decoding="async">
+          </picture>
         </div>
         <span class="nav-logo-text">Arqueros del Mar</span>
       </a>
@@ -1700,16 +1708,25 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg">
-      <img src="images/hero_1.png" alt="Arquero en acción">
+      <picture>
+        <source srcset="images/hero_1.webp" type="image/webp">
+        <img src="images/hero_1.png" alt="Arquero practicando tiro con arco en instalaciones de Arqueros del Mar" width="1672" height="941" fetchpriority="high">
+      </picture>
     </div>
 
     <div class="hero-badge-top">
-      <img src="images/worldarcheryicon.jpeg" alt="World Archery" class="badge-wa-icon" width="50" height="52">
+      <picture>
+        <source srcset="images/worldarcheryicon.webp" type="image/webp">
+        <img src="images/worldarcheryicon.jpeg" alt="World Archery" class="badge-wa-icon" width="50" height="52" loading="lazy" decoding="async">
+      </picture>
       <div class="badge-title">Instructores Certificados<br>World Archery</div>
     </div>
 
     <div class="hero-badge-bottom">
-      <img class="hero-badge-bottom-img" src="images/badge-training.jpg" alt="Programa de iniciación">
+      <picture>
+        <source srcset="images/badge-training.webp" type="image/webp">
+        <img class="hero-badge-bottom-img" src="images/badge-training.jpg" alt="Arqueros practicando tiro con arco en polígono" width="1272" height="1082" loading="lazy" decoding="async">
+      </picture>
       <div class="hero-badge-bottom-body">
         <div class="badge-title">Talleres de Iniciación al Tiro con Arco</div>
         <div class="badge-sub">De cero a arquero. Clases estructuradas para quienes dan sus primeros pasos en el arco.</div>
@@ -1774,7 +1791,10 @@
       <!-- col 3: staggered images -->
       <div class="about-right">
         <div class="about-img small">
-          <img src="images/about-photo.jpg" alt="Arquero en pista exterior">
+          <picture>
+            <source srcset="images/about-photo.webp" type="image/webp">
+            <img src="images/about-photo.jpg" alt="Arquero en pista exterior" width="800" height="1432" loading="lazy" decoding="async">
+          </picture>
         </div>
         <div class="about-img tall">
           <video autoplay muted loop playsinline poster="images/about-photo.jpg" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -1798,7 +1818,10 @@
 
       <div class="services-cards">
         <div class="service-card">
-          <img src="images/recurvo.jpg" alt="Arco Recurvo">
+          <picture>
+            <source srcset="images/recurvo.webp" type="image/webp">
+            <img src="images/recurvo.jpg" alt="Arco Recurvo" width="1440" height="959" loading="lazy" decoding="async">
+          </picture>
           <div class="service-num">(01)</div>
           <div class="service-card-body">
             <h3>Arco Recurvo</h3>
@@ -1808,7 +1831,10 @@
         </div>
 
         <div class="service-card">
-          <img src="images/compuesto.jpg" alt="Arco Compuesto">
+          <picture>
+            <source srcset="images/compuesto.webp" type="image/webp">
+            <img src="images/compuesto.jpg" alt="Arco Compuesto" width="1600" height="1067" loading="lazy" decoding="async">
+          </picture>
           <div class="service-num">(02)</div>
           <div class="service-card-body">
             <h3>Arco Compuesto</h3>
@@ -1818,7 +1844,10 @@
         </div>
 
         <div class="service-card">
-          <img src="images/raso.jpg" alt="Arco Tradicional">
+          <picture>
+            <source srcset="images/raso.webp" type="image/webp">
+            <img src="images/raso.jpg" alt="Arco Tradicional" width="1134" height="1638" loading="lazy" decoding="async">
+          </picture>
           <div class="service-num">(03)</div>
           <div class="service-card-body">
             <h3>Arco Raso</h3>
@@ -1902,7 +1931,10 @@
           </ul>
           <a href="https://reservasimple.com/arquerosdelmar" target="_blank" class="btn btn--outline btn--block">Reservar Clase <svg width="1em" height="1em" aria-hidden="true"><use href="#icon-arrow-rt"/></svg></a>
           <div class="plan-powered">
-            <img src="images/powered-by-reservasimple.png" alt="Powered by ReservaSimple" width="179" height="60">
+            <picture>
+              <source srcset="images/powered-by-reservasimple.webp" type="image/webp">
+              <img src="images/powered-by-reservasimple.png" alt="Powered by ReservaSimple" width="179" height="60" loading="lazy" decoding="async">
+            </picture>
           </div>
         </div>
 
@@ -1995,7 +2027,10 @@
         <div class="footer-brand">
           <a href="#" class="nav-logo" style="margin-bottom:1rem; display:inline-flex;">
             <div class="nav-logo-mark">
-              <img src="images/logo.png" alt="Arqueros del Mar">
+              <picture>
+                <source srcset="images/logo.webp" type="image/webp">
+                <img src="images/logo.png" alt="Arqueros del Mar" width="500" height="500" loading="lazy" decoding="async">
+              </picture>
             </div>
             <span class="nav-logo-text">Arqueros del Mar</span>
           </a>
@@ -2080,7 +2115,7 @@
         name: "Melissa Pamela Peralta Zanabria",
         role: "Google",
         avatar: "https://picsum.photos/seed/melissa-peralta/100/100",
-        image: "images/review-luz.png"
+        image: "images/review-luz.webp"
       },
       {
         text: "Lo mejor! Excelente profesores en el poco tiempo que estuve. Gran equipo de arquería y te ayudan en todo lo que necesitas.",
@@ -2101,7 +2136,7 @@
         name: "Luz Espinoza de Sanchez V.",
         role: "Google",
         avatar: "https://picsum.photos/seed/luz-espinoza/100/100",
-        image: "images/review-melissa.png"
+        image: "images/review-melissa.webp"
       },
       {
         text: "Una experiencia única! Super personalizada para probar un deporte nuevo, buen ambiente y personas divertidas.",
