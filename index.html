@@ -1525,6 +1525,23 @@
       100% { transform: scale(1.4); opacity: 0;   }
     }
 
+    /* ── Focus visible ────────────────────────────────────────────── */
+    :focus-visible {
+      outline: 2px solid var(--crimson-light);
+      outline-offset: 2px;
+    }
+    :focus:not(:focus-visible) { outline: none; }
+
+    /* ── Reduced motion ───────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
   </style>
 
   <script type="application/ld+json">
@@ -2197,15 +2214,23 @@
     prevBtn.addEventListener('click', () => go(current - 1));
     nextBtn.addEventListener('click', () => go(current + 1));
 
-    let timer = setInterval(() => go(current + 1), 5000);
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let timer = prefersReduced ? null : setInterval(() => go(current + 1), 5000);
 
-    function resetTimer() {
-      clearInterval(timer);
+    function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+    function startTimer() {
+      if (prefersReduced) return;
+      stopTimer();
       timer = setInterval(() => go(current + 1), 5000);
     }
 
-    prevBtn.addEventListener('click', resetTimer);
-    nextBtn.addEventListener('click', resetTimer);
+    prevBtn.addEventListener('click', startTimer);
+    nextBtn.addEventListener('click', startTimer);
+
+    block.addEventListener('mouseenter', stopTimer);
+    block.addEventListener('mouseleave', startTimer);
+    block.addEventListener('focusin', stopTimer);
+    block.addEventListener('focusout', startTimer);
 
     let touchStartX = 0;
     block.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
@@ -2213,7 +2238,7 @@
       const dx = e.changedTouches[0].clientX - touchStartX;
       if (Math.abs(dx) < 40) return;
       go(dx < 0 ? current + 1 : current - 1);
-      resetTimer();
+      startTimer();
     }, { passive: true });
 
     render(0);
