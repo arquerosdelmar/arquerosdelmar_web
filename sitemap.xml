@@ -3,38 +3,42 @@
 
   <url>
     <loc>https://arquerosdelmar.com.pe/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://arquerosdelmar.com.pe/clases-tiro-con-arco-adultos-lima.html</loc>
+    <lastmod>2026-09-18</lastmod>
+  </url>
+
+  <url>
+    <loc>https://arquerosdelmar.com.pe/club-tiro-con-arco-pueblo-libre.html</loc>
+    <lastmod>2026-09-18</lastmod>
   </url>
 
   <url>
     <loc>https://arquerosdelmar.com.pe/blog/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-09-18</lastmod>
   </url>
 
   <url>
     <loc>https://arquerosdelmar.com.pe/blog/guia-para-principiantes.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-09-18</lastmod>
   </url>
 
   <url>
     <loc>https://arquerosdelmar.com.pe/blog/recurvo-vs-compuesto.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-09-18</lastmod>
   </url>
 
   <url>
     <loc>https://arquerosdelmar.com.pe/blog/costo-tiro-arco-lima.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-09-18</lastmod>
   </url>
 
   <url>
     <loc>https://arquerosdelmar.com.pe/blog/tiro-arco-ninos-lima.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-09-18</lastmod>
   </url>
 
 </urlset>
