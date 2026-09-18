@@ -1530,30 +1530,38 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SportsActivityLocation",
-    "name": "Arqueros del Mar",
-    "description": "Club de tiro con arco en Lima, Perú. Instructores certificados World Archery. Tres modalidades: recurvo, compuesto y arco tradicional. Más de 30 años de experiencia.",
-    "url": "https://arquerosdelmar.com.pe/",
-    "telephone": "+51941157308",
-    "sameAs": [
-      "https://wa.me/51941157308"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Complejo Deportivo Túpac Amaru",
-      "addressLocality": "Pueblo Libre",
-      "addressRegion": "Lima",
-      "addressCountry": "PE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -12.0734454,
-      "longitude": -77.0728995
-    },
-    "location": [
+    "@graph": [
       {
-        "@type": "Place",
-        "name": "Complejo Deportivo Túpac Amaru",
+        "@type": "WebSite",
+        "@id": "https://arquerosdelmar.com.pe/#website",
+        "name": "Arqueros del Mar",
+        "url": "https://arquerosdelmar.com.pe/"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://arquerosdelmar.com.pe/#organization",
+        "name": "Arqueros del Mar",
+        "url": "https://arquerosdelmar.com.pe/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://arquerosdelmar.com.pe/images/logo.png"
+        },
+        "telephone": "+51941157308",
+        "email": "arquerosdelmar.peru@gmail.com",
+        "sameAs": [
+          "https://www.instagram.com/arquerosdelmar.pe/",
+          "https://www.facebook.com/arquerosdelmar.pe/"
+        ]
+      },
+      {
+        "@type": "SportsActivityLocation",
+        "@id": "https://arquerosdelmar.com.pe/#location-tupac-amaru",
+        "name": "Arqueros del Mar — Complejo Deportivo Túpac Amaru",
+        "description": "Club de tiro con arco en Lima, Perú. Instructores certificados World Archery. Tres modalidades: recurvo, compuesto y arco tradicional.",
+        "url": "https://arquerosdelmar.com.pe/",
+        "telephone": "+51941157308",
+        "sport": "Tiro con arco",
+        "priceRange": "S/ 20 – S/ 350",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Complejo Deportivo Túpac Amaru",
@@ -1582,8 +1590,12 @@
         ]
       },
       {
-        "@type": "Place",
-        "name": "IESTP María Rosario Araoz Pinto",
+        "@type": "SportsActivityLocation",
+        "@id": "https://arquerosdelmar.com.pe/#location-araoz-pinto",
+        "name": "Arqueros del Mar — IESTP María Rosario Araoz Pinto",
+        "url": "https://arquerosdelmar.com.pe/",
+        "telephone": "+51941157308",
+        "sport": "Tiro con arco",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "IESTP María Rosario Araoz Pinto",
@@ -1606,8 +1618,12 @@
         ]
       },
       {
-        "@type": "Place",
-        "name": "Complejo Panamericano Costa Verde",
+        "@type": "SportsActivityLocation",
+        "@id": "https://arquerosdelmar.com.pe/#location-costa-verde",
+        "name": "Arqueros del Mar — Complejo Panamericano Costa Verde",
+        "url": "https://arquerosdelmar.com.pe/",
+        "telephone": "+51941157308",
+        "sport": "Tiro con arco",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Complejo Panamericano Costa Verde",
@@ -1659,14 +1675,7 @@
           }
         ]
       }
-    ],
-    "sport": "Tiro con arco",
-    "priceRange": "S/ 20 – S/ 350",
-    "openingHours": ["Mo 08:45-13:00", "Tu 13:15-15:45", "Th 08:45-13:00", "Fr 13:15-17:45", "Sa 08:45-18:00", "Su 08:45-14:00"],
-    "founder": {
-      "@type": "Organization",
-      "name": "Arqueros del Mar"
-    }
+    ]
   }
   </script>
 </head>
