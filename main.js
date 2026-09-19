@@ -15,7 +15,7 @@
         text: "Excelente club, tiene entrenadores calificados, priorizan la salud física y mental de sus deportistas, tienen un programa completo de fortalecimiento y entrenamiento basados en el avance de cada arquero y lo mejor es que al iniciar el club te brinda todos los implementos para que puedas aprender.",
         name: "Melissa Pamela Peralta Zanabria",
         role: "Google",
-        image: "images/review-luz.webp"
+        image: "images/review-melissa.webp"
       },
       {
         text: "Lo mejor! Excelente profesores en el poco tiempo que estuve. Gran equipo de arquería y te ayudan en todo lo que necesitas.",
@@ -33,7 +33,7 @@
         text: "Excelente lugar al aire libre para practicar el deporte, buen ambiente, buenos profesores y compañeros.",
         name: "Luz Espinoza de Sanchez V.",
         role: "Google",
-        image: "images/review-melissa.webp"
+        image: "images/review-luz.webp"
       },
       {
         text: "Una experiencia única! Super personalizada para probar un deporte nuevo, buen ambiente y personas divertidas.",
