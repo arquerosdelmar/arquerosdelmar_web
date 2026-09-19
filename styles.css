@@ -625,15 +625,6 @@
 
     .service-card:hover img { opacity: 0.45; transform: scale(1.06); }
 
-    .service-num {
-      position: absolute;
-      top: 1.25rem;
-      left: 1.25rem;
-      font-size: 1.04rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.85);
-    }
 
     .service-card-body {
       position: absolute;
