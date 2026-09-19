@@ -95,6 +95,34 @@
 
     .nav-links a:hover { color: #fff; }
 
+    .nav-has-dropdown { position: relative; }
+
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15,15,15,0.97);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      list-style: none;
+      min-width: 180px;
+      padding: 0.5rem 0;
+      z-index: 200;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+
+    .nav-dropdown li a {
+      display: block;
+      padding: 0.55rem 1.25rem;
+      white-space: nowrap;
+      font-size: 0.9rem;
+    }
+
+    .nav-has-dropdown:hover .nav-dropdown,
+    .nav-has-dropdown:focus-within .nav-dropdown { display: block; }
+
     /* ─── HERO ───────────────────────────────────────────── */
     .hero {
       min-height: 100dvh;
