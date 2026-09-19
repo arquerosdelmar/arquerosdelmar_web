@@ -43,6 +43,80 @@
     ]
   }
   </script>
+  <style>
+    .nosotros-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 480px;
+      margin: -2rem -1.5rem 3rem;
+    }
+    .nosotros-split-video {
+      position: relative;
+      overflow: hidden;
+    }
+    .nosotros-split-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .nosotros-split-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 2.5rem;
+      background: rgba(255,255,255,0.03);
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+    .nosotros-split-text h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 0 0 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    .nosotros-split-text p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+      margin: 0 0 1rem;
+    }
+    .nosotros-split-text p:last-child { margin-bottom: 0; }
+    .nosotros-stats {
+      display: flex;
+      gap: 2rem;
+      margin: 1.5rem 0 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .nosotros-stat-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #dc143c;
+      line-height: 1;
+    }
+    .nosotros-stat-lbl {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.25rem;
+    }
+    @media (max-width: 700px) {
+      .nosotros-split {
+        grid-template-columns: 1fr;
+        margin: -1rem -1rem 2rem;
+      }
+      .nosotros-split-video { min-height: 260px; }
+      .nosotros-split-text { padding: 1.75rem 1.25rem; }
+      .nosotros-stats { gap: 1.5rem; }
+      .nosotros-stat-val { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -69,31 +143,45 @@
   <header class="article-hero">
     <div class="article-hero-inner">
       <span class="article-tag">El Club</span>
-      <h1>Desde el Principio,<br><em>Aquí Estamos</em></h1>
+      <h1>Arqueros del Mar</h1>
       <div class="article-meta">
-        <span>80+ miembros activos</span>
-        <span>30+ años de actividad</span>
         <span>Lima, Perú</span>
+        <span>Fundado hace ~30 años</span>
       </div>
     </div>
   </header>
 
   <article class="article-body">
 
-    <picture style="display:block;margin-bottom:2rem;border-radius:8px;overflow:hidden;">
-      <source srcset="images/about-photo.webp" type="image/webp">
-      <img src="images/about-photo.jpg" alt="Arquero practicando en instalaciones de Arqueros del Mar" width="800" height="1432" loading="lazy" decoding="async" style="width:100%;max-width:480px;height:auto;display:block;margin:0 auto;">
-    </picture>
-
-    <p>
-      Casi 30 años formando arqueros en el Perú, desde quienes toman un arco por primera vez
-      hasta deportistas de alto rendimiento.
-    </p>
-
-    <p>
-      Ya sea que quieras descubrir el tiro con arco, practicarlo de forma recreativa o competir,
-      en Arqueros del Mar encontrarás un espacio para seguir creciendo.
-    </p>
+    <div class="nosotros-split">
+      <div class="nosotros-split-video">
+        <video autoplay muted loop playsinline poster="images/about-photo.jpg">
+          <source src="images/about-video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="nosotros-split-text">
+        <h2>Casi 30 Años<br>Formando Arqueros</h2>
+        <p>
+          Desde quienes toman un arco por primera vez hasta deportistas de alto rendimiento.
+          Ya sea que quieras descubrir el tiro con arco, practicarlo de forma recreativa o competir,
+          en Arqueros del Mar encontrarás un espacio para seguir creciendo.
+        </p>
+        <div class="nosotros-stats">
+          <div>
+            <div class="nosotros-stat-val">80+</div>
+            <div class="nosotros-stat-lbl">Miembros activos</div>
+          </div>
+          <div>
+            <div class="nosotros-stat-val">30+</div>
+            <div class="nosotros-stat-lbl">Años de actividad</div>
+          </div>
+          <div>
+            <div class="nosotros-stat-val">3</div>
+            <div class="nosotros-stat-lbl">Sedes en Lima</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="callout">
       <p>
