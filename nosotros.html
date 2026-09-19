@@ -18,7 +18,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="blog/blog.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3NTC2ZXEJ"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W3NTC2ZXEJ');</script>
   <script type="application/ld+json">
@@ -44,154 +43,370 @@
   }
   </script>
   <style>
-    .nosotros-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      min-height: 480px;
-      margin: -2rem -1.5rem 3rem;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --crimson: #dc143c;
+      --crimson-light: #e8395a;
+      --bg: #0a0a0a;
+      --bg-2: #111;
+      --bg-3: #1a1a1a;
+      --border: rgba(255,255,255,0.07);
+      --text: rgba(255,255,255,0.88);
+      --text-muted: rgba(255,255,255,0.48);
+      --max: 860px;
     }
-    .nosotros-split-video {
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    .ns-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .ns-nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .ns-nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      flex: 1;
+    }
+    .ns-nav-logo img { border-radius: 6px; }
+    .ns-nav-back {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      transition: color 0.15s;
+    }
+    .ns-nav-back:hover { color: var(--text); }
+    .ns-nav-cta {
+      background: var(--crimson);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .ns-nav-cta:hover { background: var(--crimson-light); }
+
+    /* ── HEADER ── */
+    .ns-header {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 4rem 1.5rem 2rem;
+    }
+    .ns-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 1rem;
+    }
+    .ns-header h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.0;
+      letter-spacing: 0.01em;
+      margin-bottom: 1.25rem;
+    }
+    .ns-header h1 em {
+      font-style: normal;
+      color: var(--crimson);
+    }
+    .ns-header-lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      line-height: 1.65;
+    }
+
+    /* ── VIDEO FEATURE ── */
+    .ns-video-wrap {
+      max-width: var(--max);
+      margin: 0 auto 3.5rem;
+      padding: 0 1.5rem;
+    }
+    .ns-video {
       position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-3);
+    }
+    .ns-video video {
+      width: 100%;
+      display: block;
+      max-height: 480px;
+      object-fit: cover;
+    }
+
+    /* ── STATS ── */
+    .ns-stats {
+      max-width: var(--max);
+      margin: 0 auto 3.5rem;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 10px;
       overflow: hidden;
     }
-    .nosotros-split-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .ns-stat {
+      background: var(--bg-2);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
     }
-    .nosotros-split-text {
+    .ns-stat-val {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--crimson);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .ns-stat-lbl {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    /* ── CONTENT ── */
+    .ns-content {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+    .ns-content h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 2.5rem 0 1rem;
+      color: #fff;
+    }
+    .ns-content h2:first-child { margin-top: 0; }
+    .ns-content p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .ns-content ul {
+      list-style: none;
+      padding: 0;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 3rem 2.5rem;
-      background: #0a0a0a;
-      border-left: 1px solid rgba(255,255,255,0.06);
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
     }
-    .nosotros-split-text h2 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.1;
-      margin: 0 0 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
-    }
-    .nosotros-split-text p {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.75);
-      margin: 0 0 1rem;
-    }
-    .nosotros-split-text p:last-child { margin-bottom: 0; }
-    .nosotros-stats {
+    .ns-content li {
       display: flex;
-      gap: 2rem;
-      margin: 1.5rem 0 0;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      align-items: baseline;
+      gap: 0.75rem;
+      color: var(--text-muted);
     }
-    .nosotros-stat-val {
+    .ns-content li::before {
+      content: '→';
+      color: var(--crimson);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .ns-content li a {
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .ns-content li a:hover {
+      color: #fff;
+      border-color: var(--crimson);
+    }
+    .ns-content li strong { color: var(--text); font-weight: 600; }
+
+    /* ── CALLOUT ── */
+    .ns-callout {
+      background: var(--bg-3);
+      border-left: 3px solid var(--crimson);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .ns-callout p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* ── CTA ── */
+    .ns-cta {
+      margin-top: 3rem;
+      padding: 2.5rem;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+    .ns-cta h3 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #dc143c;
-      line-height: 1;
-    }
-    .nosotros-stat-lbl {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
+      font-size: 1.75rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 0.25rem;
+      margin-bottom: 0.5rem;
     }
-    @media (max-width: 700px) {
-      .nosotros-split {
-        grid-template-columns: 1fr;
-        margin: -1rem -1rem 2rem;
-      }
-      .nosotros-split-video { min-height: 260px; }
-      .nosotros-split-text { padding: 1.75rem 1.25rem; }
-      .nosotros-stats { gap: 1.5rem; }
-      .nosotros-stat-val { font-size: 2rem; }
+    .ns-cta p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    .ns-cta-btns {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--crimson);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--crimson-light); }
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.95rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: #fff; }
+
+    /* ── FOOTER ── */
+    .ns-footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+    }
+    .ns-footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .ns-footer-brand {
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex: 1;
+    }
+    .ns-footer-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .ns-footer-links a {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: color 0.15s;
+    }
+    .ns-footer-links a:hover { color: var(--text); }
+    .ns-footer-copy {
+      width: 100%;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .ns-stats { grid-template-columns: 1fr; }
+      .ns-cta { padding: 1.75rem 1.25rem; }
+      .ns-cta-btns { flex-direction: column; }
+      .btn-primary, .btn-ghost { text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- SVG SPRITES -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <symbol id="icon-arrow-rt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
-      <path d="M19 13V5h-8"/><path stroke-linecap="round" d="M19 5l-1 1"/><path d="M18 6L5 19"/>
-    </symbol>
-  </svg>
-
-  <nav class="blog-nav">
-    <div class="blog-nav-inner">
-      <a href="/" class="blog-nav-logo">
-        <img src="images/favicon-opt.png" alt="Arqueros del Mar" width="40" height="40" loading="lazy" decoding="async">
+  <nav class="ns-nav">
+    <div class="ns-nav-inner">
+      <a href="/" class="ns-nav-logo">
+        <img src="images/favicon-opt.png" alt="Arqueros del Mar" width="32" height="32" loading="lazy" decoding="async">
         <span>Arqueros del Mar</span>
       </a>
-      <a href="/" class="blog-nav-section">← Inicio</a>
-      <a href="https://reservasimple.com/arquerosdelmar" target="_blank" rel="noopener" class="blog-nav-cta">
+      <a href="/" class="ns-nav-back">← Inicio</a>
+      <a href="https://reservasimple.com/arquerosdelmar" target="_blank" rel="noopener" class="ns-nav-cta">
         Reservar clase
       </a>
     </div>
   </nav>
 
-  <header class="article-hero">
-    <div class="article-hero-inner">
-      <span class="article-tag">El Club</span>
-      <h1>Arqueros del Mar</h1>
-      <div class="article-meta">
-        <span>Lima, Perú</span>
-        <span>Fundado hace ~30 años</span>
-      </div>
-    </div>
+  <header class="ns-header">
+    <span class="ns-tag">El Club</span>
+    <h1>Arqueros<br><em>del Mar</em></h1>
+    <p class="ns-header-lead">
+      Casi 30 años formando arqueros en el Perú, desde principiantes absolutos
+      hasta deportistas de alto rendimiento.
+    </p>
   </header>
 
-  <article class="article-body">
-
-    <div class="nosotros-split">
-      <div class="nosotros-split-video">
-        <video autoplay muted loop playsinline poster="images/about-photo.jpg">
-          <source src="images/about-video.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="nosotros-split-text">
-        <h2>Casi 30 Años<br>Formando Arqueros</h2>
-        <p>
-          Desde quienes toman un arco por primera vez hasta deportistas de alto rendimiento.
-          Ya sea que quieras descubrir el tiro con arco, practicarlo de forma recreativa o competir,
-          en Arqueros del Mar encontrarás un espacio para seguir creciendo.
-        </p>
-        <div class="nosotros-stats">
-          <div>
-            <div class="nosotros-stat-val">80+</div>
-            <div class="nosotros-stat-lbl">Miembros activos</div>
-          </div>
-          <div>
-            <div class="nosotros-stat-val">30+</div>
-            <div class="nosotros-stat-lbl">Años de actividad</div>
-          </div>
-          <div>
-            <div class="nosotros-stat-val">3</div>
-            <div class="nosotros-stat-lbl">Sedes en Lima</div>
-          </div>
-        </div>
-      </div>
+  <div class="ns-video-wrap">
+    <div class="ns-video">
+      <video autoplay muted loop playsinline poster="images/about-photo.jpg">
+        <source src="images/about-video.mp4" type="video/mp4">
+      </video>
     </div>
+  </div>
 
-    <div class="callout">
-      <p>
-        Esta página está en construcción. Pronto encontrarás aquí la historia del club,
-        el equipo de instructores y más información sobre nuestra comunidad.
-      </p>
+  <div class="ns-stats">
+    <div class="ns-stat">
+      <div class="ns-stat-val">80+</div>
+      <div class="ns-stat-lbl">Miembros activos</div>
+    </div>
+    <div class="ns-stat">
+      <div class="ns-stat-val">30+</div>
+      <div class="ns-stat-lbl">Años de actividad</div>
+    </div>
+    <div class="ns-stat">
+      <div class="ns-stat-val">3</div>
+      <div class="ns-stat-lbl">Sedes en Lima</div>
+    </div>
+  </div>
+
+  <main class="ns-content">
+
+    <div class="ns-callout">
+      <p>Esta página está en construcción. Pronto encontrarás aquí la historia del club, el equipo de instructores y más sobre nuestra comunidad.</p>
     </div>
 
     <h2>Nuestras Modalidades</h2>
-
     <ul>
       <li><a href="arco-recurvo-lima.html">Arco Recurvo</a> — la modalidad olímpica.</li>
       <li><a href="arco-compuesto-lima.html">Arco Compuesto</a> — precisión técnica sin límites.</li>
@@ -199,41 +414,35 @@
     </ul>
 
     <h2>Dónde Entrenamos</h2>
-
     <ul>
       <li><strong>Complejo Deportivo Túpac Amaru</strong> — Pueblo Libre. <a href="club-tiro-con-arco-pueblo-libre.html">Ver horarios →</a></li>
       <li><strong>IESTP María Rosario Araoz Pinto</strong> — San Miguel.</li>
       <li><strong>Complejo Panamericano Costa Verde</strong> — San Miguel.</li>
     </ul>
 
-    <div class="article-cta">
+    <div class="ns-cta">
       <h3>¿Quieres Conocernos?</h3>
       <p>La primera clase es la mejor forma de entender qué es Arqueros del Mar. Desde S/ 20.</p>
-      <div class="cta-buttons">
-        <a href="https://reservasimple.com/arquerosdelmar" target="_blank" rel="noopener" class="btn btn--primary">
-          Reservar clase
-          <svg width="1em" height="1em" aria-hidden="true"><use href="#icon-arrow-rt"/></svg>
-        </a>
-        <a href="https://wa.me/51941157308" target="_blank" rel="noopener" class="btn btn--ghost">
-          WhatsApp
-        </a>
+      <div class="ns-cta-btns">
+        <a href="https://reservasimple.com/arquerosdelmar" target="_blank" rel="noopener" class="btn-primary">Reservar clase</a>
+        <a href="https://wa.me/51941157308" target="_blank" rel="noopener" class="btn-ghost">WhatsApp</a>
       </div>
     </div>
 
-  </article>
+  </main>
 
-  <footer class="blog-footer">
-    <div class="blog-footer-inner">
-      <a href="/" class="blog-footer-brand">Arqueros del Mar</a>
-      <nav class="blog-footer-links" aria-label="Footer navigation">
+  <footer class="ns-footer">
+    <div class="ns-footer-inner">
+      <a href="/" class="ns-footer-brand">Arqueros del Mar</a>
+      <nav class="ns-footer-links" aria-label="Footer navigation">
         <a href="/">Inicio</a>
         <a href="/#services">Modalidades</a>
         <a href="/#membership">Clases</a>
         <a href="/blog/">Blog</a>
         <a href="https://wa.me/51941157308" target="_blank" rel="noopener">WhatsApp</a>
       </nav>
-      <div class="blog-footer-copy">
-        &copy; 2026 Arqueros del Mar. Club de tiro con arco en Lima, Perú. Todos los derechos reservados.
+      <div class="ns-footer-copy">
+        &copy; 2026 Arqueros del Mar. Club de tiro con arco en Lima, Perú.
       </div>
     </div>
   </footer>
