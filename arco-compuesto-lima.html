@@ -402,20 +402,5 @@
 
   </div><!-- /.cta-footer-card -->
 
-
-  <script>
-  (function() {
-    const nav = document.querySelector('nav');
-    if (!nav) return;
-    const navH = nav.offsetHeight;
-    let lastY = 0;
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      nav.style.transform = y > lastY && y > navH ? `translateY(-${navH}px)` : 'translateY(0)';
-      lastY = y;
-    }, { passive: true });
-  })();
-  </script>
-
 </body>
 </html>
