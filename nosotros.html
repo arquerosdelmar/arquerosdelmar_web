@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/favicon-opt.png">
-  <title>Sobre Nosotros | Arqueros del Mar</title>
-  <meta name="description" content="Casi 30 años formando arqueros en el Perú. Conoce Arqueros del Mar: historia, instructores certificados World Archery y tres sedes en Lima.">
+  <link rel="stylesheet" href="styles.css">
+  <title>Nosotros y Equipo | Arqueros del Mar</title>
+  <meta name="description" content="Casi 30 años formando arqueros en el Perú. Conoce Arqueros del Mar: historia, modalidades, sedes e instructores certificados World Archery.">
   <link rel="canonical" href="https://arquerosdelmar.com.pe/nosotros.html">
-  <meta property="og:title" content="Sobre Nosotros | Arqueros del Mar">
+  <meta property="og:title" content="Nosotros y Equipo | Arqueros del Mar">
   <meta property="og:description" content="Casi 30 años formando arqueros en el Perú. Club de tiro con arco en Lima con instructores certificados World Archery.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arquerosdelmar.com.pe/nosotros.html">
@@ -15,9 +16,9 @@
   <meta property="og:locale" content="es_PE">
   <meta property="og:site_name" content="Arqueros del Mar">
   <meta property="fb:app_id" content="992800223773037">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=Barlow+Condensed:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/barlow-condensed-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/source-sans-3-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/fonts.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W3NTC2ZXEJ"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-W3NTC2ZXEJ');</script>
   <script type="application/ld+json">
@@ -27,7 +28,7 @@
       {
         "@type": "WebPage",
         "@id": "https://arquerosdelmar.com.pe/nosotros.html",
-        "name": "Sobre Nosotros — Arqueros del Mar",
+        "name": "Nosotros y Equipo — Arqueros del Mar",
         "description": "Casi 30 años formando arqueros en el Perú. Instructores certificados World Archery. Tres sedes en Lima.",
         "url": "https://arquerosdelmar.com.pe/nosotros.html",
         "publisher": { "@type": "Organization", "name": "Arqueros del Mar", "@id": "https://arquerosdelmar.com.pe/#organization" }
@@ -38,6 +39,70 @@
           { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://arquerosdelmar.com.pe/" },
           { "@type": "ListItem", "position": 2, "name": "Nosotros", "item": "https://arquerosdelmar.com.pe/nosotros.html" }
         ]
+      },
+      {
+        "@type": "Person",
+        "name": "Oscar Augusto Garcia Escalante",
+        "jobTitle": "Fundador y Presidente",
+        "image": "https://arquerosdelmar.com.pe/images/oscar-garcia.jpg",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
+      },
+      {
+        "@type": "Person",
+        "name": "Violeta Jesus Escobedo Abarca",
+        "jobTitle": "Vicepresidente",
+        "image": "https://arquerosdelmar.com.pe/images/violeta-compuesto.jpg",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
+      },
+      {
+        "@type": "Person",
+        "name": "Luis Humberto Roldan Santana",
+        "jobTitle": "Vocal",
+        "image": "https://arquerosdelmar.com.pe/images/luis-roldan.jpg",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
+      },
+      {
+        "@type": "Person",
+        "name": "Maritza Meza",
+        "jobTitle": "Entrenadora",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
+      },
+      {
+        "@type": "Person",
+        "name": "Gustavo Antonio Romero Flores",
+        "jobTitle": "Instructor",
+        "image": "https://arquerosdelmar.com.pe/images/gustavo-romero.jpeg",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
+      },
+      {
+        "@type": "Person",
+        "name": "Adriana Thalia Gonzales Del Carpio",
+        "jobTitle": "Instructor",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
+      },
+      {
+        "@type": "Person",
+        "name": "Diego Sebastian Garcia Carlos",
+        "jobTitle": "Tech & Alianzas",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
+      },
+      {
+        "@type": "Person",
+        "name": "Franco Paz",
+        "jobTitle": "Instructor",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
+      },
+      {
+        "@type": "Person",
+        "name": "Jose Luis Miranda Otoya",
+        "jobTitle": "Secretario General",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
+      },
+      {
+        "@type": "Person",
+        "name": "Alfredo Hermenegildo Leon Sanchez",
+        "jobTitle": "Tesorero",
+        "worksFor": { "@type": "Organization", "name": "Arqueros del Mar" }
       }
     ]
   }
@@ -51,10 +116,12 @@
       --bg: #0a0a0a;
       --bg-2: #111;
       --bg-3: #1a1a1a;
+      --bg-4: #222;
       --border: rgba(255,255,255,0.07);
+      --border-hover: rgba(255,255,255,0.14);
       --text: rgba(255,255,255,0.88);
       --text-muted: rgba(255,255,255,0.48);
-      --max: 860px;
+      --max: 1320px;
     }
 
     html { scroll-behavior: smooth; }
@@ -75,64 +142,117 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-    .ns-nav-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      height: 56px;
+      background: rgba(10,10,10,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: none;
+      height: 88px;
       display: flex;
       align-items: center;
-      gap: 1rem;
+    }
+    .ns-nav-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .ns-nav-logo {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      flex: 1;
+      gap: 0.75rem;
+      text-decoration: none;
     }
-    .ns-nav-logo img { border-radius: 6px; }
-    .ns-nav-back {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      transition: color 0.15s;
+    .ns-nav-logo-mark {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
     }
-    .ns-nav-back:hover { color: var(--text); }
+    .ns-nav-logo-mark img { width: 100%; height: 100%; object-fit: cover; }
+    .ns-nav-logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .ns-nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+    .ns-nav-links a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      transition: color 0.2s;
+    }
+    .ns-nav-links a:hover { color: #fff; }
+    .ns-nav-has-dropdown { position: relative; }
+    .ns-nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding-top: 0.75rem;
+      background: transparent;
+      list-style: none;
+      min-width: 180px;
+      z-index: 200;
+    }
+    .ns-nav-dropdown::before {
+      content: '';
+      position: absolute;
+      inset: 0.75rem 0 0;
+      background: rgba(15,15,15,0.97);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+    .ns-nav-dropdown li a {
+      display: block;
+      padding: 0.55rem 1.25rem;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+    }
+    .ns-nav-dropdown li a:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .ns-nav-dropdown li:first-child a { padding-top: 1rem; }
+    .ns-nav-dropdown li:last-child a  { padding-bottom: 1rem; }
+    .ns-nav-has-dropdown:hover .ns-nav-dropdown,
+    .ns-nav-has-dropdown:focus-within .ns-nav-dropdown { display: block; }
     .ns-nav-cta {
       background: var(--crimson);
       color: #fff;
-      font-size: 0.875rem;
-      font-weight: 600;
-      padding: 0.45rem 1rem;
-      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 8px;
       transition: background 0.15s;
       white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
     .ns-nav-cta:hover { background: var(--crimson-light); }
+    @media (max-width: 900px) {
+      .ns-nav-links { display: none; }
+      .ns-nav-cta-text { display: none; }
+    }
 
     /* ── HEADER ── */
     .ns-header {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 4rem 1.5rem 2rem;
-    }
-    .ns-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--crimson);
-      margin-bottom: 1rem;
+      padding: 4rem 2.5rem 2rem;
     }
     .ns-header h1 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-size: clamp(3rem, 5vw, 5rem);
       font-weight: 800;
       text-transform: uppercase;
       line-height: 1.0;
@@ -146,34 +266,65 @@
     .ns-header-lead {
       font-size: 1.1rem;
       color: var(--text-muted);
-      max-width: 540px;
+      max-width: 100%;
       line-height: 1.65;
     }
 
-    /* ── VIDEO FEATURE ── */
-    .ns-video-wrap {
+    /* ── PHOTO PAIR ── */
+    .ns-photos {
       max-width: var(--max);
       margin: 0 auto 3.5rem;
-      padding: 0 1.5rem;
+      padding: 0 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
-    .ns-video {
-      position: relative;
+    .ns-photo {
       border-radius: 12px;
       overflow: hidden;
       background: var(--bg-3);
+      aspect-ratio: 16/7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .ns-video video {
+    .ns-photo img {
       width: 100%;
-      display: block;
-      max-height: 480px;
+      height: 100%;
       object-fit: cover;
+      display: block;
+    }
+    .ns-photo-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: 100%;
+      height: 100%;
+    }
+    .ns-photo-placeholder svg {
+      opacity: 0.25;
+    }
+    @media (max-width: 600px) {
+      .ns-photos { grid-template-columns: 1fr; }
+      .ns-photo { aspect-ratio: 16/9; }
+
+    /* dummy rule to close the media query */
     }
 
     /* ── STATS ── */
-    .ns-stats {
+    .ns-stats-wrap {
       max-width: var(--max);
       margin: 0 auto 3.5rem;
-      padding: 0 1.5rem;
+      padding: 0 2.5rem;
+    }
+    .ns-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
@@ -183,16 +334,16 @@
     }
     .ns-stat {
       background: var(--bg-2);
-      padding: 1.75rem 1.5rem;
+      padding: 1.1rem 1.5rem;
       text-align: center;
     }
     .ns-stat-val {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 3rem;
+      font-size: 2rem;
       font-weight: 800;
       color: var(--crimson);
       line-height: 1;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.25rem;
     }
     .ns-stat-lbl {
       font-size: 0.8rem;
@@ -201,155 +352,242 @@
       letter-spacing: 0.07em;
     }
 
-    /* ── CONTENT ── */
-    .ns-content {
+    /* ── TEAM GRID ── */
+    .team-section {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 1.5rem 5rem;
+      padding: 0 2.5rem 4rem;
     }
-    .ns-content h2 {
+    .team-section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .team-section-header h2 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin: 2.5rem 0 1rem;
       color: #fff;
+      margin: 0;
     }
-    .ns-content h2:first-child { margin-top: 0; }
-    .ns-content p {
+    .team-count {
+      font-size: 0.8rem;
       color: var(--text-muted);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .team-card {
+      background: var(--bg-2);
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: background 0.2s;
+    }
+    .team-card:hover { background: var(--bg-3); }
+
+    .team-avatar {
+      width: 144px;
+      height: 144px;
+      border-radius: 50%;
+      background: var(--bg-3);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--crimson-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+
+    .team-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+
+    .team-role {
+      font-size: 0.82rem;
+      color: var(--crimson-light);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
       margin-bottom: 1rem;
     }
-    .ns-content ul {
+
+    .team-creds {
       list-style: none;
       padding: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
+      gap: 0.4rem;
+      margin-bottom: 1.1rem;
+      flex: 1;
     }
-    .ns-content li {
+    .team-creds li {
       display: flex;
       align-items: baseline;
-      gap: 0.75rem;
+      gap: 0.5rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
+      line-height: 1.4;
     }
-    .ns-content li::before {
+    .team-creds li::before {
       content: '→';
       color: var(--crimson);
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       flex-shrink: 0;
     }
-    .ns-content li a {
-      color: var(--text);
-      border-bottom: 1px solid var(--border);
-      transition: border-color 0.15s, color 0.15s;
-    }
-    .ns-content li a:hover {
-      color: #fff;
-      border-color: var(--crimson);
-    }
-    .ns-content li strong { color: var(--text); font-weight: 600; }
 
-    /* ── CALLOUT ── */
-    .ns-callout {
-      background: var(--bg-3);
-      border-left: 3px solid var(--crimson);
-      border-radius: 0 8px 8px 0;
-      padding: 1rem 1.25rem;
-      margin-bottom: 2rem;
+    .team-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
     }
-    .ns-callout p {
-      margin: 0;
-      font-size: 0.9rem;
+    .team-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
       color: var(--text-muted);
+      background: transparent;
     }
+    .team-badge.recurvo { background: transparent; border-color: rgba(220,20,60,0.45); color: rgba(220,20,60,0.7); }
+    .team-badge.compuesto { background: transparent; border-color: rgba(220,20,60,0.45); color: rgba(220,20,60,0.7); }
+    .team-badge.raso { background: transparent; border-color: rgba(220,20,60,0.45); color: rgba(220,20,60,0.7); }
+    .team-badge.gestion { border-color: var(--border); color: var(--text-muted); background: transparent; }
 
     /* ── CTA ── */
-    .ns-cta {
-      margin-top: 3rem;
-      padding: 2.5rem;
+    /* ── INSTITUTIONAL ── */
+    .ns-inst-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2.5rem 5rem;
+    }
+    .ns-inst {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .ns-inst-block {
       background: var(--bg-2);
       border: 1px solid var(--border);
       border-radius: 12px;
-      text-align: center;
+      padding: 2rem;
     }
-    .ns-cta h3 {
+    .ns-inst-block h3 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.75rem;
+      font-size: 0.78rem;
       font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
     }
-    .ns-cta p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem; }
-    .ns-cta-btns {
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      flex-wrap: wrap;
+    .ns-inst-table {
+      width: 100%;
+      border-collapse: collapse;
     }
-    .btn-primary {
-      background: var(--crimson);
-      color: #fff;
-      font-weight: 700;
+    .ns-inst-table tr + tr td { border-top: 1px solid var(--border); }
+    .ns-inst-table td {
+      padding: 0.6rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      vertical-align: top;
+    }
+    .ns-inst-table td:first-child {
+      color: var(--text-muted);
+      width: 45%;
+      padding-right: 1rem;
+    }
+    .ns-inst-placeholder {
+      color: rgba(220,20,60,0.6);
+      font-style: italic;
+      font-size: 0.85rem;
+    }
+    .ns-inst-mission {
       font-size: 0.95rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
-      transition: background 0.15s;
-    }
-    .btn-primary:hover { background: var(--crimson-light); }
-    .btn-ghost {
-      border: 1px solid var(--border);
       color: var(--text);
-      font-size: 0.95rem;
-      padding: 0.7rem 1.5rem;
-      border-radius: 8px;
-      transition: border-color 0.15s, color 0.15s;
+      line-height: 1.75;
     }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: #fff; }
+    .ns-inst-domains {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .ns-inst-domains a {
+      color: var(--text);
+      text-decoration: underline;
+      text-decoration-color: var(--border);
+      text-underline-offset: 3px;
+    }
+    .ns-inst-domains a:hover { text-decoration-color: rgba(255,255,255,0.4); }
+    @media (max-width: 768px) {
+      .ns-inst { grid-template-columns: 1fr; }
+    }
 
-    /* ── FOOTER ── */
-    .ns-footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 1.5rem;
-    }
-    .ns-footer-inner {
-      max-width: var(--max);
-      margin: 0 auto;
+    /* ── SCROLL TOP ── */
+    .ns-scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 1.75rem;
+      z-index: 200;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: rgba(20,20,20,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.2s, background 0.2s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
-    .ns-footer-brand {
-      font-weight: 700;
-      font-size: 0.9rem;
-      flex: 1;
-    }
-    .ns-footer-links {
-      display: flex;
-      gap: 1.25rem;
-      flex-wrap: wrap;
-    }
-    .ns-footer-links a {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      transition: color 0.15s;
-    }
-    .ns-footer-links a:hover { color: var(--text); }
-    .ns-footer-copy {
-      width: 100%;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-    }
+    .ns-scroll-top.visible { opacity: 1; pointer-events: auto; }
+    .ns-scroll-top:hover { transform: scale(1.08); background: rgba(40,40,40,0.95); }
+    .ns-scroll-top:active { transform: scale(0.96); }
+    .ns-scroll-top svg { width: 18px; height: 18px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 
+    @media (max-width: 900px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 600px) {
       .ns-stats { grid-template-columns: 1fr; }
-      .ns-cta { padding: 1.75rem 1.25rem; }
-      .ns-cta-btns { flex-direction: column; }
-      .btn-primary, .btn-ghost { text-align: center; }
+      .team-grid { grid-template-columns: 1fr; background: transparent; gap: 1px; }
+      .team-card { border-radius: 0; border-bottom: 1px solid var(--border); }
+      .team-card:first-child { border-radius: 10px 10px 0 0; }
+      .team-card:last-child { border-radius: 0 0 10px 10px; border-bottom: none; }
     }
   </style>
 </head>
@@ -358,33 +596,46 @@
   <nav class="ns-nav">
     <div class="ns-nav-inner">
       <a href="/" class="ns-nav-logo">
-        <img src="images/favicon-opt.png" alt="Arqueros del Mar" width="32" height="32" loading="lazy" decoding="async">
-        <span>Arqueros del Mar</span>
+        <div class="ns-nav-logo-mark">
+          <picture>
+            <source srcset="images/logo.webp" type="image/webp">
+            <img src="images/logo.png" alt="Arqueros del Mar" width="500" height="500" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <span class="ns-nav-logo-text">Arqueros del Mar</span>
       </a>
-      <a href="/" class="ns-nav-back">← Inicio</a>
+
+      <ul class="ns-nav-links">
+        <li><a href="nosotros.html" style="color:#fff;">Nosotros</a></li>
+        <li class="ns-nav-has-dropdown">
+          <a href="/#services">Modalidades</a>
+          <ul class="ns-nav-dropdown">
+            <li><a href="arco-recurvo-lima.html">Arco Recurvo</a></li>
+            <li><a href="arco-compuesto-lima.html">Arco Compuesto</a></li>
+            <li><a href="arco-raso-lima.html">Arco Raso</a></li>
+          </ul>
+        </li>
+        <li><a href="/#facilities">Encuéntranos</a></li>
+        <li><a href="/#membership">Clases</a></li>
+        <li><a href="/#testimonials">Testimonios</a></li>
+        <li><a href="blog/">Blog</a></li>
+      </ul>
+
       <a href="https://reservasimple.com/arquerosdelmar" target="_blank" rel="noopener" class="ns-nav-cta">
-        Reservar clase
+        Inscríbete <svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
   </nav>
 
   <header class="ns-header">
-    <span class="ns-tag">El Club</span>
-    <h1>Arqueros<br><em>del Mar</em></h1>
+    <h1>Acerca de<br><em>Nosotros</em></h1>
     <p class="ns-header-lead">
       Casi 30 años formando arqueros en el Perú, desde principiantes absolutos
       hasta deportistas de alto rendimiento.
     </p>
   </header>
 
-  <div class="ns-video-wrap">
-    <div class="ns-video">
-      <video autoplay muted loop playsinline poster="images/about-photo.jpg">
-        <source src="images/about-video.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-
+  <div class="ns-stats-wrap">
   <div class="ns-stats">
     <div class="ns-stat">
       <div class="ns-stat-val">80+</div>
@@ -399,53 +650,332 @@
       <div class="ns-stat-lbl">Sedes en Lima</div>
     </div>
   </div>
+  </div>
 
-  <main class="ns-content">
-
-    <div class="ns-callout">
-      <p>Esta página está en construcción. Pronto encontrarás aquí la historia del club, el equipo de instructores y más sobre nuestra comunidad.</p>
-    </div>
-
-    <h2>Nuestras Modalidades</h2>
-    <ul>
-      <li><a href="arco-recurvo-lima.html">Arco Recurvo</a> — la modalidad olímpica.</li>
-      <li><a href="arco-compuesto-lima.html">Arco Compuesto</a> — precisión técnica sin límites.</li>
-      <li><a href="arco-raso-lima.html">Arco Raso</a> — tiro instintivo sin accesorios.</li>
-    </ul>
-
-    <h2>Dónde Entrenamos</h2>
-    <ul>
-      <li><strong>Complejo Deportivo Túpac Amaru</strong> — Pueblo Libre. <a href="club-tiro-con-arco-pueblo-libre.html">Ver horarios →</a></li>
-      <li><strong>IESTP María Rosario Araoz Pinto</strong> — San Miguel.</li>
-      <li><strong>Complejo Panamericano Costa Verde</strong> — San Miguel.</li>
-    </ul>
-
-    <div class="ns-cta">
-      <h3>¿Quieres Conocernos?</h3>
-      <p>La primera clase es la mejor forma de entender qué es Arqueros del Mar. Desde S/ 20.</p>
-      <div class="ns-cta-btns">
-        <a href="https://reservasimple.com/arquerosdelmar" target="_blank" rel="noopener" class="btn-primary">Reservar clase</a>
-        <a href="https://wa.me/51941157308" target="_blank" rel="noopener" class="btn-ghost">WhatsApp</a>
+  <div class="ns-photos">
+    <div class="ns-photo">
+      <div class="ns-photo-placeholder">
+        <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        Foto próximamente
       </div>
     </div>
-
-  </main>
-
-  <footer class="ns-footer">
-    <div class="ns-footer-inner">
-      <a href="/" class="ns-footer-brand">Arqueros del Mar</a>
-      <nav class="ns-footer-links" aria-label="Footer navigation">
-        <a href="/">Inicio</a>
-        <a href="/#services">Modalidades</a>
-        <a href="/#membership">Clases</a>
-        <a href="/blog/">Blog</a>
-        <a href="https://wa.me/51941157308" target="_blank" rel="noopener">WhatsApp</a>
-      </nav>
-      <div class="ns-footer-copy">
-        &copy; 2026 Arqueros del Mar. Club de tiro con arco en Lima, Perú.
+    <div class="ns-photo">
+      <div class="ns-photo-placeholder">
+        <svg width="40" height="40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        Foto próximamente
       </div>
+    </div>
+  </div>
+
+
+  <section class="team-section" aria-label="Directiva">
+    <div class="team-section-header">
+      <h2>Directiva</h2>
+      <span class="team-count">Junta Directiva del Club</span>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-avatar" style="padding:0;overflow:hidden;background:none;">
+          <img src="images/oscar-garcia.jpg" alt="Oscar Augusto Garcia Escalante" width="144" height="144" loading="lazy" decoding="async" style="width:175%;height:175%;object-fit:cover;object-position:center top;margin-left:20%;margin-top:50%;">
+        </div>
+        <div class="team-name">Oscar Augusto Garcia Escalante</div>
+        <div class="team-role">Fundador y Presidente</div>
+        <ul class="team-creds">
+          <li>Fundador del club Arqueros del Mar</li>
+          <li>Ex presidente de la Federación Peruana de Tiro con Arco (2014-2022)</li>
+          <li>Certificado Entrenador Nivel 2 — World Archery</li>
+          <li>Arquero especialista en arco compuesto</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge compuesto">Compuesto</span><span class="team-badge gestion">Directiva</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" style="padding:0;overflow:hidden;background:none;">
+          <img src="images/violeta-compuesto.jpg" alt="Violeta Jesus Escobedo Abarca" width="120" height="120" loading="lazy" decoding="async" style="width:200%;height:200%;object-fit:cover;object-position:center top;margin-left:90%;margin-top:30%;">
+        </div>
+        <div class="team-name">Violeta Jesus Escobedo Abarca</div>
+        <div class="team-role">Vicepresidente</div>
+        <ul class="team-creds">
+          <li>Arquera especialista en arco compuesto</li>
+          <li>Certificada Entrenadora Nivel 1 — World Archery</li>
+          <li>Coordinación de actividades internas del club</li>
+          <li>Gestión de relaciones con organismos deportivos</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge compuesto">Compuesto</span><span class="team-badge gestion">Directiva</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="52%" height="52%"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.25)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="team-name">Jose Luis Miranda Otoya</div>
+        <div class="team-role">Secretario General</div>
+        <ul class="team-creds">
+          <li>Arquero especialista en arco compuesto</li>
+          <li>Gestión documentaria del club</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge compuesto">Compuesto</span><span class="team-badge gestion">Directiva</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="52%" height="52%"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.25)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="team-name">Alfredo Hermenegildo Leon Sanchez</div>
+        <div class="team-role">Tesorero</div>
+        <ul class="team-creds">
+          <li>Gestión financiera del club</li>
+          <li>Informes económicos a la directiva</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge gestion">Directiva</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" style="padding:0;overflow:hidden;background:none;">
+          <img src="images/luis-roldan.jpg" alt="Luis Humberto Roldan Santana" width="144" height="144" loading="lazy" decoding="async" style="width:250%;height:250%;object-fit:cover;object-position:center top;margin-left:30%;margin-top:0%;">
+        </div>
+        <div class="team-name">Luis Humberto Roldan Santana</div>
+        <div class="team-role">Vocal</div>
+        <ul class="team-creds">
+          <li>Arquero especialista en arco compuesto</li>
+          <li>Seguimiento de acuerdos y resoluciones de directiva</li>
+          <li>Representación del club ante otros clubes y reuniones interinstitucionales</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge compuesto">Compuesto</span><span class="team-badge gestion">Directiva</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="team-section" aria-label="Entrenadores">
+    <div class="team-section-header">
+      <h2>Entrenadores</h2>
+      <span class="team-count">Entrenamiento y seguimiento de atletas del club</span>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="52%" height="52%"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.25)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="team-name">Maritza Meza</div>
+        <div class="team-role">Entrenadora</div>
+        <ul class="team-creds">
+          <li>Ex selección peruana de tiro con arco</li>
+          <li>Especialista en recurvo y compuesto</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge recurvo">Recurvo</span><span class="team-badge compuesto">Compuesto</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="team-section" aria-label="Staff">
+    <div class="team-section-header">
+      <h2>Staff</h2>
+      <span class="team-count">Apoyo en clases, talleres, y soporte a las actividades del club</span>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-avatar" style="padding:0;overflow:hidden;background:none;">
+          <img src="images/gustavo-romero.jpeg" alt="Gustavo Antonio Romero Flores" width="144" height="144" loading="lazy" decoding="async" style="width:200%;height:200%;object-fit:cover;object-position:center top;margin-left:70%;margin-top:30%;">
+        </div>
+        <div class="team-name">Gustavo Antonio Romero Flores</div>
+        <div class="team-role">Instructor</div>
+        <ul class="team-creds">
+          <li>Selección Peruana de Tiro con Arco</li>
+          <li>Especialista en arco recurvo</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge recurvo">Recurvo</span><span class="team-badge gestion">Redes y Publicidad</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="52%" height="52%"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.25)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="team-name">Adriana Thalia Gonzales Del Carpio</div>
+        <div class="team-role">Instructor</div>
+        <ul class="team-creds">
+          <li>Certificada Entrenadora Nivel 1 — World Archery</li>
+          <li>Especialista en arco recurvo</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge recurvo">Recurvo</span><span class="team-badge gestion">Gestión y Logística</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="52%" height="52%"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.25)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="team-name">Diego Sebastian Garcia Carlos</div>
+        <div class="team-role">Tech & Alianzas</div>
+        <ul class="team-creds">
+          <li>Desarrollo web y presencia digital del club</li>
+          <li>Gestión de alianzas estratégicas</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge recurvo">Recurvo</span><span class="team-badge gestion">Tecnología</span></div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="52%" height="52%"><circle cx="12" cy="8" r="4" fill="rgba(255,255,255,0.25)"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+        <div class="team-name">Franco Paz</div>
+        <div class="team-role">Instructor</div>
+        <ul class="team-creds">
+          <li>Especialista en arco recurvo</li>
+        </ul>
+        <div class="team-badges"><span class="team-badge recurvo">Recurvo</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="ns-inst-wrap">
+    <div class="ns-inst">
+
+      <div class="ns-inst-block">
+        <h3>Información Institucional</h3>
+        <table class="ns-inst-table">
+          <tbody>
+            <tr>
+              <td>Razón social</td>
+              <td>Club Deportivo de Tiro con Arco Arqueros del Mar</td>
+            </tr>
+            <tr>
+              <td>RUC</td>
+              <td>20609238870</td>
+            </tr>
+            <tr>
+              <td>Tipo de organización</td>
+              <td>Club deportivo sin fines de lucro</td>
+            </tr>
+            <tr>
+              <td>Año de fundación</td>
+              <td>1996</td>
+            </tr>
+            <tr>
+              <td>Domicilio</td>
+              <td>Cal. Nevado Chachani Nro. 243 Urb. Maranga 6ta Et., San Miguel, Lima</td>
+            </tr>
+            <tr>
+              <td>Contacto</td>
+              <td><a href="https://wa.me/51941157308">+51 941 157 308</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:2rem;">
+        <div class="ns-inst-block">
+          <h3>Misión</h3>
+          <p class="ns-inst-mission">Promover, desarrollar y difundir la práctica del tiro con arco en el Perú, facilitando el acceso a este deporte mediante programas de iniciación, formación y entrenamiento deportivo. Buscamos fomentar el desarrollo integral de nuestros deportistas, la participación competitiva y los valores de disciplina, respeto y superación personal.</p>
+        </div>
+
+        <div class="ns-inst-block">
+          <h3>Dominios Oficiales</h3>
+          <p class="ns-inst-domains">El Club Deportivo de Tiro con Arco Arqueros del Mar es titular y administrador exclusivo de los dominios <a href="https://arquerosdelmar.com.pe" target="_blank" rel="noopener">arquerosdelmar.com.pe</a> y <a href="https://arquerosdelmar.com" target="_blank" rel="noopener">arquerosdelmar.com</a>. Ningún otro dominio representa oficialmente a nuestra organización.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cta-footer-card">
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner-inner">
+      <h2>¿Listo para Disparar tu Primera Flecha?</h2>
+      <div class="cta-banner-right">
+        <p>
+          No importa si nunca has sostenido un arco o si llevas años compitiendo; tenemos el entrenamiento, la experiencia y la comunidad para llevarte al siguiente nivel.
+        </p>
+        <a href="https://reservasimple.com/arquerosdelmar" target="_blank" rel="noopener" class="btn btn--primary">Únete Ahora <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" style="margin-bottom:1rem; display:inline-flex;">
+            <div class="nav-logo-mark">
+              <picture>
+                <source srcset="images/logo.webp" type="image/webp">
+                <img src="images/logo.png" alt="Arqueros del Mar" width="500" height="500" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <span class="nav-logo-text">Arqueros del Mar</span>
+          </a>
+          <p class="footer-tagline">Un club de tiro con arco construido para la pasión, el rendimiento y el progreso de cada arquero.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/#facilities">Encuéntranos</a></li>
+            <li><a href="/#membership">Clases</a></li>
+            <li><a href="/#testimonials">Testimonios</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Blog</h3>
+          <ul>
+            <li><a href="blog/guia-para-principiantes.html">Cómo Empezar desde Cero</a></li>
+            <li><a href="blog/recurvo-vs-compuesto.html">Recurvo vs. Compuesto</a></li>
+            <li><a href="blog/costo-tiro-arco-lima.html">¿Cuánto Cuesta en Lima?</a></li>
+            <li><a href="blog/tiro-arco-ninos-lima.html">Tiro con Arco para Niños</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <address>
+            +51 941 157 308<br>
+            arquerosdelmar.peru@gmail.com
+          </address>
+        </div>
+      </div>
+    </div><!-- /.footer-inner -->
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-bg-img"></div>
+      <div class="footer-bottom-overlay"></div>
+      <div class="footer-bottom-bar">
+        <span class="footer-copy">&copy; 2026 Arqueros del Mar. Todos los derechos reservados.</span>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/arquerosdelmar_oficial" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/arquerosdelmaroficial" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/51941157308" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/arquerosdelmar" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:arquerosdelmar.peru@gmail.com" class="social-icon" aria-label="Correo electrónico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill:none;stroke:rgba(255,255,255,0.8);width:16px;height:16px;"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-wordmark">Arqueros del Mar</div>
     </div>
   </footer>
+  <button class="ns-scroll-top" id="nsScrollTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script>
+    (function() {
+      const nav = document.querySelector('.ns-nav');
+      const navH = 88;
+      window.addEventListener('scroll', () => {
+        nav.style.transform = `translateY(-${Math.min(window.scrollY, navH)}px)`;
+      }, { passive: true });
+
+      const btn = document.getElementById('nsScrollTop');
+      window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 400);
+      }, { passive: true });
+      btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    })();
+  </script>
 
 </body>
 </html>
