@@ -102,7 +102,7 @@ body {
 /* ─── ARTICLE HERO ────────────────────────────────────────────────────────── */
 .article-hero {
   background: var(--black-900);
-  padding: 3rem 2.5rem 2.75rem;
+  padding: 5.5rem 2.5rem 2.75rem;
 }
 
 .article-hero-inner {
