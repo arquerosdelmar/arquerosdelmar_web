@@ -1310,6 +1310,12 @@
       color: rgba(255,255,255,0.7);
     }
 
+    .footer-bottom-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
     .footer-socials {
       display: flex;
       flex-direction: row;
